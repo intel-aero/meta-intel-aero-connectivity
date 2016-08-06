@@ -1,0 +1,13 @@
+#!/bin/sh
+
+set +e
+
+ACTION=$2
+RECEIVE=$1                
+
+echo "update for $ACTION change: $RECEIVE" 
+echo "update for $ACTION change: $RECEIVE" > /dev/console
+
+exit
+
+
