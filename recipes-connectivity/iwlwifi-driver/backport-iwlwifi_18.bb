@@ -54,12 +54,12 @@ do_configure() {
 
 do_install() {
     ## install kernel objects from driver tree into target fs
-    install -m 0755 -d ${D}${base_libdir}/modules/${KERNVER}/updates/
-    install -m 0644 $(find ${S} -name "iwlwifi.ko")  ${D}${base_libdir}/modules/${KERNVER}/updates
-    install -m 0644 $(find ${S} -name "iwlmvm.ko")   ${D}${base_libdir}/modules/${KERNVER}/updates
-    install -m 0644 $(find ${S} -name "cfg80211.ko") ${D}${base_libdir}/modules/${KERNVER}/updates/iwl-cfg80211.ko
-    install -m 0644 $(find ${S} -name "mac80211.ko") ${D}${base_libdir}/modules/${KERNVER}/updates/iwl-mac80211.ko
-    install -m 0644 $(find ${S} -name "compat.ko")   ${D}${base_libdir}/modules/${KERNVER}/updates
+    install -m 0755 -d ${D}/lib/modules/${KERNVER}/updates/
+    install -m 0644 $(find ${S} -name "iwlwifi.ko")  ${D}/lib/modules/${KERNVER}/updates
+    install -m 0644 $(find ${S} -name "iwlmvm.ko")   ${D}/lib/modules/${KERNVER}/updates
+    install -m 0644 $(find ${S} -name "cfg80211.ko") ${D}/lib/modules/${KERNVER}/updates/iwl-cfg80211.ko
+    install -m 0644 $(find ${S} -name "mac80211.ko") ${D}/lib/modules/${KERNVER}/updates/iwl-mac80211.ko
+    install -m 0644 $(find ${S} -name "compat.ko")   ${D}/lib/modules/${KERNVER}/updates
 
     ## install configs and service scripts
     install -d ${D}${sbindir} ${D}${systemd_unitdir}/system/ ${D}${sysconfdir}/modprobe.d
