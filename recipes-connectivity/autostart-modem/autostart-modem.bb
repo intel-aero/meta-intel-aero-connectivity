@@ -6,6 +6,7 @@ LIC_FILES_CHKSUM = "file://${COMMON_LICENSE_DIR}/GPL-2.0;md5=801f80980d171dd6425
 SRC_URI = " \
     file://NetworkManager \
     file://02wwan \
+    file://setfirewall.sh \
     file://Modemlink \
     file://NetworkManager.conf \
 "
@@ -25,6 +26,7 @@ FILES_${PN} = "${sysconfdir}/init.d/NetworkManager \
                /etc/NetworkManager/dispatcher.d/02wwan \
                /etc/NetworkManager/system-connections/Modemlink \
                /etc/NetworkManager/NetworkManager.conf \
+	       /usr/bin/setfirewall.sh \
 "
 
 do_install() {
@@ -50,5 +52,9 @@ do_install() {
     install -m 0744 ${WORKDIR}/02wwan ${D}/etc/NetworkManager/dispatcher.d/
     install -m 0700 ${WORKDIR}/Modemlink ${D}/etc/NetworkManager/system-connections/
     install -m 0700 ${WORKDIR}/NetworkManager.conf ${D}/etc/NetworkManager/
+    install -d ${D}/usr/
+    install -d ${D}/usr/bin/
+    install -m 0755  ${WORKDIR}/setfirewall.sh ${D}/usr/bin
+
 }
 
