@@ -26,7 +26,6 @@ EXTRA_OECONF = " \
         --disable-rpath \
         --enable-more-warnings \
         --disable-gtk-doc \
-        --without-docs \
         --with-gnu-ld \
         --without-qmi \
         --with-polkit=none \

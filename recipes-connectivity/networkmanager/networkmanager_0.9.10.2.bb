@@ -4,7 +4,7 @@ SECTION = "net/misc"
 LICENSE = "GPLv2+"
 LIC_FILES_CHKSUM = "file://COPYING;md5=cbbffd568227ada506640fe950a4823b"
 
-DEPENDS = "libnl dbus dbus-glib udev wireless-tools nss util-linux ppp modemmanager libndp libsoup-2.4 libnewt"
+DEPENDS = "libnl dbus dbus-glib udev wireless-tools nss util-linux ppp modemmanager libndp libsoup-2.4 libnewt bluez5"
 
 inherit gnome gettext systemd
 
