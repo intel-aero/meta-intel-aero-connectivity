@@ -25,8 +25,8 @@ IPTABLES="/usr/sbin/iptables"
 
 # Alternative Local Interface
 IF_LOCAL=wlan0
-IP_LOCAL=192.168.1.1
-NET_LOCAL=192.168.1.0/24
+IP_LOCAL=192.168.8.1
+NET_LOCAL=192.168.8.0/24
 
 # Public interface, WWAN interface
 IF_PUBLIC=$2
