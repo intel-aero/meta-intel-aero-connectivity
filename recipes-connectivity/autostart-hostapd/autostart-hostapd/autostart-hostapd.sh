@@ -22,7 +22,7 @@ case "$1" in
 
                 # Start DHCP server
                 sleep 1
-                ifconfig wlan0 192.168.1.1
+                ifconfig wlan0 192.168.8.1
                 start-stop-daemon -S -x /usr/sbin/udhcpd -- -S /etc/udhcpd.conf
                 ;;
         stop)
