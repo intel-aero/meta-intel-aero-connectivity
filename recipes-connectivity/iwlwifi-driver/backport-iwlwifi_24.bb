@@ -11,12 +11,14 @@ PROVIDES = "kernel-module-cfg80211 \
             kernel-module-mac80211 \
             kernel-module-iwlmvm   \
             kernel-module-iwlwifi  \
+            kernel-module-iwlxvt  \
             kernel-module-compat   "
 
 RPROVIDES_${PN} = "kernel-module-cfg80211 \
                    kernel-module-mac80211 \
                    kernel-module-iwlmvm   \
                    kernel-module-iwlwifi  \
+                   kernel-module-iwlxvt  \
                    kernel-module-compat "
 
 SRC_URI = "git://git.kernel.org/pub/scm/linux/kernel/git/iwlwifi/backport-iwlwifi;branch=release/LinuxCore${PV}"
@@ -41,6 +43,7 @@ KERNVER="${KERNEL_VERSION}"
 FILES_${PN} = "/lib/modules/${KERNVER}/updates/cfg80211.ko \
                /lib/modules/${KERNVER}/updates/compat.ko \
                /lib/modules/${KERNVER}/updates/iwlwifi.ko \
+               /lib/modules/${KERNVER}/updates/iwlxvt.ko \
                /lib/modules/${KERNVER}/updates/iwlmvm.ko \
                /lib/modules/${KERNVER}/updates/mac80211.ko \
                ${sysconfdir}/modprobe.d/iwlwifi.conf"
@@ -56,6 +59,7 @@ do_install() {
     ## install kernel objects from driver tree into target fs
     install -m 0755 -d ${D}/lib/modules/${KERNVER}/updates/
     install -m 0644 $(find ${S} -name "iwlwifi.ko")  ${D}/lib/modules/${KERNVER}/updates
+    install -m 0644 $(find ${S} -name "iwlxvt.ko")  ${D}/lib/modules/${KERNVER}/updates
     install -m 0644 $(find ${S} -name "iwlmvm.ko")   ${D}/lib/modules/${KERNVER}/updates
     install -m 0644 $(find ${S} -name "cfg80211.ko") ${D}/lib/modules/${KERNVER}/updates/iwl-cfg80211.ko
     install -m 0644 $(find ${S} -name "mac80211.ko") ${D}/lib/modules/${KERNVER}/updates/iwl-mac80211.ko
