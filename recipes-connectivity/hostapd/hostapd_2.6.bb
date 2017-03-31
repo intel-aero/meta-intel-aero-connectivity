@@ -1,7 +1,7 @@
 HOMEPAGE = "http://hostap.epitest.fi"
 SECTION = "kernel/userland"
 LICENSE = "GPLv2 | BSD"
-LIC_FILES_CHKSUM = "file://README;md5=7f393579f8b109fe91f3b9765d26c7d3"
+LIC_FILES_CHKSUM = "file://README;md5=3f01d778be8f953962388307ee38ed2b"
 DEPENDS = "libnl openssl"
 SUMMARY = "User space daemon for extended IEEE 802.11 management"
 
@@ -50,6 +50,6 @@ do_install() {
     install -m 0755 ${WORKDIR}/udhcpd.conf ${D}${sysconfdir}
 }
 
-SRC_URI[md5sum] = "69f9cec3f76d74f402864a43e4f8624f"
-SRC_URI[sha256sum] = "8e272d954dc0d7026c264b79b15389ec2b2c555b32970de39f506b9f463ec74a"
+SRC_URI[md5sum] = "eaa56dce9bd8f1d195eb62596eab34c7"
+SRC_URI[sha256sum] = "01526b90c1d23bec4b0f052039cc4456c2fd19347b4d830d1d58a0a6aea7117d"
 
