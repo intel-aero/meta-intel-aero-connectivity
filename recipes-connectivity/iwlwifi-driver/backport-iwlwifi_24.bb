@@ -1,5 +1,5 @@
-SUMMARY = "Intel Wireless LinuxCore 18 kernel driver"
-DESCRIPTION = "Intel Wireless LinuxCore 18 kernel driver"
+SUMMARY = "Intel Wireless LinuxCore 24 kernel driver"
+DESCRIPTION = "Intel Wireless LinuxCore 24 kernel driver"
 SECTION = "kernel"
 LICENSE = "GPLv2"
 
