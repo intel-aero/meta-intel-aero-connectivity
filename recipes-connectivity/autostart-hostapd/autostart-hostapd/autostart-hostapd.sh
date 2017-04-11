@@ -17,7 +17,7 @@ case "$1" in
                 rfkill unblock wlan
 
                 # Start softAP
-                start-stop-daemon -S -x /usr/local/bin/hostapd -- -d -B -f /home/hostap_log /etc/hostapd.conf
+                start-stop-daemon -S -x /usr/local/bin/hostapd -- -B -f /var/log/hostapd.log /etc/hostapd.conf
 
                 # Start DHCP server
                 sleep 1
