@@ -8,7 +8,6 @@ case "$1" in
 
                 # Stop hostapd if previously running.
                 /etc/init.d/autostart-hostapd.sh stop
-                sleep 1
 
                 # Need to enable RFKILL for wlan0
                 rfkill unblock wlan
