@@ -13,8 +13,8 @@ case "$1" in
                 rfkill unblock wlan
 
                 # get wlan MAC@ and use it for P2P device name.
-                MAC=$(ifconfig -a | grep wlan | sed -e 's/.*HWaddr\s//' |tr -d ':')
-                sed -ie "s/^device_name=.*/device_name=CR_P2P-${MAC}/" /etc/p2p_supplicant.conf
+                MAC=$(ifconfig -a | grep wlan | sed -e 's/.*HWaddr\s//' |tr -d ':[:space:]')
+                sed -ie "s/^device_name=.*/device_name=Aero-${MAC}/" /etc/p2p_supplicant.conf
 
                 # Start supplicant
                 start-stop-daemon -S -x /usr/sbin/wpa_supplicant -- -iwlan0 -Dnl80211 -c/etc/wpa_supplicant.conf -m/etc/p2p_supplicant.conf -dd &
