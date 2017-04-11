@@ -8,7 +8,6 @@ case "$1" in
 
                 # Stop wpa_supplicant if previously running.
                 /etc/init.d/autostart-supplicant.sh stop
-                sleep 5
 
                 # get wlan MAC@ and use it for Soft-AP SSID.
                 MAC=$(ifconfig -a | grep wlan | sed -e 's/.*HWaddr\s*//' | tr -d ':[:space:]')
