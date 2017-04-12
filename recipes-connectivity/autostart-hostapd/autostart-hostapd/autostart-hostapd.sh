@@ -8,17 +8,16 @@ case "$1" in
 
                 # Stop wpa_supplicant if previously running.
                 /etc/init.d/autostart-supplicant.sh stop
-                sleep 5
 
                 # get wlan MAC@ and use it for Soft-AP SSID.
                 MAC=$(ifconfig -a | grep wlan | sed -e 's/.*HWaddr\s*//' | tr -d ':[:space:]')
-                sed -ie "s/^ssid=.*/ssid=Aero-${MAC}/" /etc/hostapd.conf
+                sed "s/^ssid=.*/ssid=Aero-${MAC}/" /etc/hostapd.conf > /tmp/hostapd.conf
 
                 # Need to enable RFKILL for wlan0
                 rfkill unblock wlan
 
                 # Start softAP
-                start-stop-daemon -S -x /usr/local/bin/hostapd -- -d -B -f /home/hostap_log /etc/hostapd.conf
+                start-stop-daemon -S -x /usr/local/bin/hostapd -- -B -f /var/log/hostapd.log /tmp/hostapd.conf
 
                 # Start DHCP server
                 sleep 1
