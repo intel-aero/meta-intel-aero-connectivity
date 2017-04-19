@@ -1,2 +1,2 @@
 # meta-intel-aero-connectivity
-Yocto layer to support Connectivity on Intel Aero platform
+All the content has been moved to meta-intel-aero
